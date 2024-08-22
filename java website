@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let hour = 13; hour <= 23; hour++) {
         const option = document.createElement('option');
         const time = `${hour.toString().padStart(2, '0')}:00`;
+        console.log(`Adding time slot: ${time}`); // Debugging output
         option.value = time;
         option.textContent = time;
         timeSelect.appendChild(option);
@@ -60,18 +61,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
-// Mock function to simulate sending confirmation
-function sendConfirmation(phone, email, date, time) {
-    const message = `Bokningen är klar, kom ${date} kl ${time}`;
-
-    if (phone) {
-        // Simulate sending SMS
-        console.log(`Sending SMS to ${phone}: ${message}`);
-    }
-
-    if (email) {
-        // Simulate sending Email
-        console.log(`Sending Email to ${email}: ${message}`);
-    }
-}
